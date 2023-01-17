@@ -47,7 +47,7 @@ function Opinions() {
               Acerca del Producto
             </h2>
             <p className="text-xl text-gray-600" data-aos="zoom-y-out">
-              Conoce la opinion de algunos de los perfiles de clientes que
+              Conoce la opinión de algunos de los perfiles de clientes que
               entrevistamos, para validar el producto.
             </p>
           </div>

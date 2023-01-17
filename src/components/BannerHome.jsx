@@ -51,7 +51,7 @@ function BannerHome() {
               con tus hijos y{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-lime-500 to-red-400">
                 reducir
-              </span>
+              </span>{" "}
               el uso de dispositivos móviles{" "}
             </h1>
             <div className="max-w-3xl mx-auto">
@@ -60,7 +60,7 @@ function BannerHome() {
                 data-aos="zoom-y-out"
                 data-aos-delay="150"
               >
-                Kidkard te permite tener una mayor interacción e interacción con
+                Kidkard te permite tener una mayor conexión e interacción con
                 tus hijos, además de reducir el uso de dispositivos electrónicos
                 mientras se entretienen entre familia.
               </p>

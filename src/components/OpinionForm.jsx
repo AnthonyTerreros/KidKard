@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import Foto3 from "../assets/Foto3.jpeg";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import { collection, addDoc } from "firebase/firestore";
+
+import { db } from "../firebaseConfig/firebase";
+
+const MySwal = withReactContent(Swal);
 
 function OpinionForm() {
+  const opinionCollection = collection(db, "opiniones");
+
+  const [correoUser, setCorreoUser] = useState("");
+  const [respuestaUser, setRespuestaUser] = useState("");
+  const [descripcionUser, setDescripcionUser] = useState("");
+
+  const onSubmitForm = async (e) => {
+    e.preventDefault();
+    console.log({ correoUser, respuestaUser, descripcionUser });
+    await addDoc(opinionCollection, {
+      correoUser,
+      respuestaUser,
+      descripcionUser,
+    });
+    setCorreoUser("");
+    setRespuestaUser("");
+    setDescripcionUser("");
+    MySwal.fire({
+      title: "Opinion Enviada",
+      text: "Gracias por darnos tu opinión",
+      confirmButtonText: "Aceptar",
+    });
+  };
+
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -30,16 +61,16 @@ function OpinionForm() {
               {/* CTA content */}
               <div className="text-center lg:text-left lg:max-w-xl">
                 <h3 className="h3 text-white mb-2 text-4xl font-bold">
-                  Producto en proceso de lanzamiento
+                  KidKard está en proceso de lanzamiento
                 </h3>
                 <p className="text-gray-300 text-lg mb-6">
                   Estamos validando si es factible lanzar este producto al
-                  mercado. Te agradeceríamos si nos das tu opinión acerca del
-                  producto.
+                  mercado. Te agradeceríamos si nos das tu opinión acerca de
+                  este producto.
                 </p>
 
                 {/* CTA form */}
-                <form className="w-full lg:w-auto">
+                <form className="w-full lg:w-auto" onSubmit={onSubmitForm}>
                   <div className="mb-4">
                     <label
                       className="block text-white my-2 text-sm font-bold mb-2"
@@ -49,6 +80,9 @@ function OpinionForm() {
                     </label>
                     <input
                       type="email"
+                      name="correo"
+                      onChange={(e) => setCorreoUser(e.target.value)}
+                      value={correoUser}
                       className="form-input w-full appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
                       placeholder="Ingresa tu Correo: "
                       aria-label="Your email…"
@@ -63,8 +97,9 @@ function OpinionForm() {
                       ¿Comprarías el producto?
                     </label>
                     <select
-                      name="repuesta"
+                      name="respuesta"
                       id="respuesta"
+                      onChange={(e) => setRespuestaUser(e.target.value)}
                       className="form-input w-full appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
                       defaultValue={"DEFAULT"}
                     >
@@ -82,6 +117,9 @@ function OpinionForm() {
                     </label>
                     <textarea
                       id="descripcion"
+                      name="descripcion"
+                      onChange={(e) => setDescripcionUser(e.target.value)}
+                      value={descripcionUser}
                       type="text"
                       className="form-input w-full appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
                       placeholder="Ingresa tu comentario: "
