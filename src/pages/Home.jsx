@@ -10,16 +10,12 @@ import OpinionForm from "../components/OpinionForm";
 function Home() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
-      <Header />
-
       <main className="flex-grow">
         <BannerHome />
         <FeaturesContainer />
         <Opinions />
         <OpinionForm />
       </main>
-
-      <Footer />
     </div>
   );
 }

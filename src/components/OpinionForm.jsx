@@ -27,7 +27,7 @@ function OpinionForm() {
     setRespuestaUser("");
     setDescripcionUser("");
     MySwal.fire({
-      title: "Opinion Enviada",
+      title: "Opinión Enviada",
       text: "Gracias por darnos tu opinión",
       confirmButtonText: "Aceptar",
     });

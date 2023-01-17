@@ -29,7 +29,7 @@ function Header() {
               <svg
                 version="1.0"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-16 h-16"
+                className="w-20 h-20"
                 viewBox="0 0 1068.000000 660.000000"
                 preserveAspectRatio="xMidYMid meet"
               >
