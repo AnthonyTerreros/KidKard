@@ -5,6 +5,7 @@ import withReactContent from "sweetalert2-react-content";
 import { collection, addDoc } from "firebase/firestore";
 
 import { db } from "../firebaseConfig/firebase";
+import { useNavigate } from "react-router-dom";
 
 const MySwal = withReactContent(Swal);
 
@@ -14,6 +15,8 @@ function OpinionForm() {
   const [correoUser, setCorreoUser] = useState("");
   const [respuestaUser, setRespuestaUser] = useState("");
   const [descripcionUser, setDescripcionUser] = useState("");
+
+  const nagivate = useNavigate();
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
@@ -31,6 +34,7 @@ function OpinionForm() {
       text: "Gracias por darnos tu opinión",
       confirmButtonText: "Aceptar",
     });
+    nagivate("/");
   };
 
   return (
