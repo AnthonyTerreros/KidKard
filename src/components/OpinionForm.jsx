@@ -15,21 +15,15 @@ function OpinionForm() {
           </div>
 
           <div
-            className="relative bg-gray-900 rounded py-10 px-8 md:py-16 md:px-12 shadow-2xl overflow-hidden"
+            className="relative bg-gray-800 rounded py-10 px-8 md:py-16 md:px-12 shadow-2xl overflow-hidden"
             data-aos="zoom-y-out"
           >
             {/* Background illustration */}
             <div
-              className="absolute right-0 bottom-0 pointer-events-none hidden lg:block"
+              className="absolute top-16 right-10 bottom-2 pointer-events-none hidden lg:block h-64 w-96"
               aria-hidden="true"
             >
-              <img
-                className="relative"
-                src={Foto3}
-                width="300"
-                height="300"
-                alt="Foto 3 Kid Kard"
-              />
+              <img className="relative" src={Foto3} alt="Foto 3 Kid Kard" />
             </div>
 
             <div className="relative flex flex-col lg:flex-row justify-between items-center">
@@ -46,22 +40,57 @@ function OpinionForm() {
 
                 {/* CTA form */}
                 <form className="w-full lg:w-auto">
-                  <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:mx-0">
+                  <div className="mb-4">
+                    <label
+                      className="block text-white my-2 text-sm font-bold mb-2"
+                      htmlFor="correo"
+                    >
+                      Correo:
+                    </label>
                     <input
                       type="email"
-                      className="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-white placeholder-gray-500"
-                      placeholder="Your email…"
+                      className="form-input w-full appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
+                      placeholder="Ingresa tu Correo: "
                       aria-label="Your email…"
+                      id="correo"
                     />
-                    <a
-                      className="btn text-white bg-blue-600 hover:bg-blue-700 shadow"
-                      href="#0"
-                    >
-                      Subscribe
-                    </a>
                   </div>
-                  {/* Success message */}
-                  {/* <p className="text-sm text-gray-400 mt-3">Thanks for subscribing!</p> */}
+                  <div className="mb-4">
+                    <label
+                      className="block text-white my-2 text-sm font-bold mb-2"
+                      htmlFor="respuesta"
+                    >
+                      ¿Comprarías el producto?
+                    </label>
+                    <select
+                      name="repuesta"
+                      id="respuesta"
+                      className="form-input w-full appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
+                      defaultValue={"DEFAULT"}
+                    >
+                      <option value="DEFAULT">Elige una opción</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div className="mb-4">
+                    <label
+                      className="block text-white my-2 text-sm font-bold mb-2"
+                      htmlFor="descripcion"
+                    >
+                      ¿Por qué?
+                    </label>
+                    <textarea
+                      id="descripcion"
+                      type="text"
+                      className="form-input w-full appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
+                      placeholder="Ingresa tu comentario: "
+                      aria-label="Ingresa tu comentario"
+                    ></textarea>
+                  </div>
+                  <button className="btn text-white bg-blue-600 hover:bg-blue-700 shadow">
+                    Enviar
+                  </button>
                   <p className="text-sm text-gray-400 mt-3">
                     Toda la información recolectada será usada para mejorar
                     nuestro producto.

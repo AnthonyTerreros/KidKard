@@ -44,10 +44,15 @@ function BannerHome() {
               className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter my-8"
               data-aos="zoom-y-out"
             >
-              El juego de cartas que te permite interactuar con tus{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
-                hijos
+              El juego de cartas que te permite una mayor{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-lime-500 to-red-400">
+                interacción
+              </span>{" "}
+              con tus hijos y{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-lime-500 to-red-400">
+                reducir
               </span>
+              el uso de dispositivos móviles{" "}
             </h1>
             <div className="max-w-3xl mx-auto">
               <p
@@ -55,8 +60,9 @@ function BannerHome() {
                 data-aos="zoom-y-out"
                 data-aos-delay="150"
               >
-                Kidkard te permite conectar y conocer mas a tu hijos, a traves
-                de este juego.
+                Kidkard te permite tener una mayor interacción e interacción con
+                tus hijos, además de reducir el uso de dispositivos electrónicos
+                mientras se entretienen entre familia.
               </p>
               <div
                 className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"

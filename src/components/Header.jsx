@@ -16,21 +16,20 @@ function Header() {
 
   return (
     <header
-      className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
+      className={`w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
         !top && "bg-white backdrop-blur-sm shadow-lg"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-5 sm:px-6">
+      <div className="max-w-4xl px-5 sm:px-6 mx-auto">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Site branding */}
           <div className="flex-shrink-0 mr-4">
             {/* Logo */}
-            <Link to="/" className="block" aria-label="Cruip">
+            <Link to="/" className="block">
               <svg
                 version="1.0"
                 xmlns="http://www.w3.org/2000/svg"
-                width="150"
-                height="75"
+                className="w-16 h-16"
                 viewBox="0 0 1068.000000 660.000000"
                 preserveAspectRatio="xMidYMid meet"
               >
