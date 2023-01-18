@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 function Header() {
   const [top, setTop] = useState(true);
 
+  const [minSize, setMinSize] = useState(window.innerWidth);
+
   useEffect(() => {
     const scrollHandler = () => {
       window.pageYOffset > 10 ? setTop(false) : setTop(true);
@@ -13,6 +15,15 @@ function Header() {
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setMinSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    console.log(minSize);
+    return window.addEventListener("resize", handleResize);
+  });
 
   return (
     <header
@@ -117,7 +128,19 @@ c124 -4 176 -10 224 -26z m577 -612 c-1 -143 -13 -206 -55 -280 -45 -79 -49
           </div>
 
           {/* Site navigation */}
-          <Navbar />
+          <Navbar className="invisible" />
+          <span className={`${(minSize <= 640 && "visible") || "invisible"}`}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-10 h-10"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
+            </svg>
+          </span>
         </div>
       </div>
     </header>

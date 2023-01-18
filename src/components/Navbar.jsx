@@ -8,7 +8,7 @@ function Navbar() {
         <li>
           <Link
             to="/acerca-del-producto"
-            className="font-medium text-gray-600 hover:text-white px-5 py-3 flex items-center transition duration-150 ease-in-out"
+            className="font-medium text-gray-600  px-5 py-3 flex items-center transition duration-150 ease-in-out"
           >
             <span>Acerca del Producto</span>
           </Link>

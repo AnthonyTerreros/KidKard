@@ -2,7 +2,7 @@ import React from "react";
 
 function FeaturesContainer() {
   return (
-    <section id="beneficios" className="relative">
+    <section id="beneficios" className="relative mt-10">
       <div
         className="absolute inset-0 top-1/2 md:mt-16 lg:mt-0 bg-gray-900 pointer-events-none"
         aria-hidden="true"
