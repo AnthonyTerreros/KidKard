@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ isSM }) {
   return (
-    <nav className="flex flex-grow">
+    <nav className={`${(isSM && "invisible") || "flex flex-grow"}`}>
       <ul className="flex flex-grow justify-end flex-wrap items-center">
         <li>
           <Link

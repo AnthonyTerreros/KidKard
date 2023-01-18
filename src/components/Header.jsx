@@ -8,6 +8,8 @@ function Header() {
 
   const [minSize, setMinSize] = useState(window.innerWidth);
 
+  const [isActive, setIsActive] = useState(false);
+
   useEffect(() => {
     const scrollHandler = () => {
       window.pageYOffset > 10 ? setTop(false) : setTop(true);
@@ -24,6 +26,11 @@ function Header() {
     console.log(minSize);
     return window.addEventListener("resize", handleResize);
   });
+
+  const handleClickActive = () => {
+    console.log("Xd");
+    setIsActive(!isActive);
+  };
 
   return (
     <header
@@ -128,12 +135,13 @@ c124 -4 176 -10 224 -26z m577 -612 c-1 -143 -13 -206 -55 -280 -45 -79 -49
           </div>
 
           {/* Site navigation */}
-          <Navbar className="invisible" />
+          <Navbar isSM={minSize <= 640} />
           <span className={`${(minSize <= 640 && "visible") || "invisible"}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-10 h-10"
               viewBox="0 0 16 16"
+              onClick={handleClickActive}
             >
               <path
                 fillRule="evenodd"
@@ -142,6 +150,38 @@ c124 -4 176 -10 224 -26z m577 -612 c-1 -143 -13 -206 -55 -280 -45 -79 -49
             </svg>
           </span>
         </div>
+      </div>
+      <div
+        className={`${
+          isActive ? "visible flex flex-col" : "invisible flex flex-col"
+        }`}
+      >
+        <ul className="flex flex-col gap-3 justify-end flex-wrap items-center">
+          <li>
+            <Link
+              to="/acerca-del-producto"
+              className="font-medium text-gray-600  px-5 py-3"
+            >
+              <span>Acerca del Producto</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/beneficios"
+              className="btn-sm text-black bg-lime-600 hover:text-white ml-3"
+            >
+              <span>Beneficios</span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="enviar-opinion"
+              className="btn-sm text-black bg-lime-600 hover:text-white ml-3"
+            >
+              <span>Deja tu Opinion</span>
+            </Link>
+          </li>
+        </ul>
       </div>
     </header>
   );
