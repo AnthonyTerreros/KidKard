@@ -151,11 +151,7 @@ c124 -4 176 -10 224 -26z m577 -612 c-1 -143 -13 -206 -55 -280 -45 -79 -49
           </span>
         </div>
       </div>
-      <div
-        className={`${
-          isActive ? "visible flex flex-col" : "invisible flex flex-col"
-        }`}
-      >
+      <div className={`${isActive ? "flex flex-col" : "hidden"}`}>
         <ul className="flex flex-col gap-3 justify-end flex-wrap items-center">
           <li>
             <Link
